@@ -1,0 +1,94 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "weather app",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "WeatherAppIntent",
+          "slots": [
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "samples": [
+                "tell me weather of {city}",
+                "what is the weather of {city}",
+                "{city}"
+              ]
+            }
+          ],
+          "samples": [
+            "weather update",
+            "what is the weather ",
+            "what is the weather right now",
+            "tell me weather",
+            "tell me climate of the {city}",
+            "tell me weather of  the {city} ",
+            "what is weather of the {city}",
+            "what is weather of {city}",
+            "im in {city}",
+            "i am in {city}",
+            "tell me temperature",
+            "tell me weather of {city}",
+            "tell weather of {city}",
+            "tell me the weather of {city}",
+            "what is the weather of {city}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "WeatherAppIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.973222122627.693637206439"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.973222122627.693637206439",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "kindly tell again "
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
